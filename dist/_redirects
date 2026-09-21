@@ -1,0 +1,5 @@
+/*
+  SPA routing fallback for Netlify.
+  Every path that is not a static file is served index.html.
+*/
+/*  /index.html  200
