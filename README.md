@@ -101,3 +101,11 @@ npm run dev
 ```
 
 Your application should now be running at `http://localhost:5173`.
+
+## 👤 Author
+<div align="center">
+  
+**Noura Maher Elamin**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/nouramaherelamin/)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/nouramaherelamin)
