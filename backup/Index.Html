@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Clothing ERP & E-commerce System</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Clothing ERP & E-commerce System</h1>
+        <nav>
+            <button id="customer-view">Customer Shop</button>
+            <button id="admin-login">Admin Dashboard</button>
+        </nav>
+    </header>
+
+    <div id="customer-section" class="section active">
+        <h2>Shop Our Latest Collection</h2>
+        <div id="product-filters">
+            <select id="filter-type">
+                <option value="">All Types</option>
+                <option value="T-Shirt">T-Shirt</option>
+                <option value="Jeans">Jeans</option>
+                <option value="Dress">Dress</option>
+            </select>
+            <select id="filter-size">
+                <option value="">All Sizes</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select id="filter-color">
+                <option value="">All Colors</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Black">Black</option>
+            </select>
+        </div>
+        
+        <div id="customer-view-content">
+            <div id="product-display">
+                <h3>Available Products</h3>
+                <div id="product-list"></div>
+            </div>
+
+            <div>
+                <div id="cart-section">
+                    <h3>🛒 Your Cart</h3>
+                    <ul id="cart-items"></ul>
+                    <button id="place-order" disabled>Place Order</button>
+                </div>
+                <div id="order-tracking">
+                    <h3>📦 Track Your Orders</h3>
+                    <ul id="order-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-section" class="section">
+        <h2>Admin Dashboard</h2>
+        <div class="dashboard-tabs">
+            <button class="tab" data-tab="products">Product Classification</button>
+            <button class="tab" data-tab="inventory">Inventory Management</button>
+            <button class="tab" data-tab="orders">Online Order Management</button>
+            <button class="tab" data-tab="qc">Quality Control</button>
+            <button class="tab" data-tab="delivery">Delivery Module</button>
+            <button class="tab" data-tab="analytics">Analytics Dashboard</button>
+        </div>
+        <div id="dashboard-content">
+            <div id="products-tab" class="tab-content">
+                <div class="content-wrapper">
+                    <h3>➕ Add/Edit Products</h3>
+                    <form id="product-form">
+                        <input type="text" id="product-name" placeholder="Product Name" required>
+                        <select id="product-type" required> 
+                            <option value="">Type</option>
+                            <option value="T-Shirt">T-Shirt</option>
+                            <option value="Jeans">Jeans</option>
+                            <option value="Dress">Dress</option>
+                        </select>
+                        <select id="product-size" required>
+                            <option value="">Size</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                        <input type="text" id="product-color" placeholder="Color" required>
+                        <input type="text" id="product-season" placeholder="Season (e.g., Summer)" required>
+                        <input type="url" id="product-image" placeholder="Image URL (e.g., https://via.placeholder.com/300x220)" required> 
+                        <button type="submit">Add Product</button>
+                    </form>
+                    
+                    <h4>Product Master List</h4>
+                    <ul id="product-list-admin"></ul>
+                </div>
+            </div>
+            <div id="inventory-tab" class="tab-content">
+                <div class="content-wrapper">
+                    <h3>📦 Inventory Levels</h3>
+                    <p id="low-stock-alert"></p>
+                    <ul id="inventory-list"></ul>
+                </div>
+            </div>
+            <div id="orders-tab" class="tab-content">
+                <div class="content-wrapper">
+                    <h3>📋 Manage Orders Status</h3>
+                    <ul id="admin-order-list"></ul>
+                </div>
+            </div>
+            <div id="qc-tab" class="tab-content">
+                <div class="content-wrapper">
+                    <h3>🔎 Log QC Records</h3>
+                    <form id="qc-form">
+                        <select id="qc-product" required>
+                            <option value="">Select Product</option> </select>
+                        <select id="qc-status" required>
+                            <option value="Accepted">Accepted</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+                        <textarea id="qc-notes" placeholder="Defect Notes / Acceptance Details"></textarea>
+                        <button type="submit">Log QC</button>
+                    </form>
+                    
+                    <h4>Recent QC Logs</h4>
+                    <ul id="qc-list"></ul>
+                </div>
+            </div>
+            <div id="delivery-tab" class="tab-content">
+                <div class="content-wrapper">
+                    <h3>🚚 Assigned Deliveries</h3>
+                    <p>Orders marked 'Shipped' are automatically assigned for delivery.</p>
+                    <ul id="delivery-list"></ul>
+                </div>
+            </div>
+            <div id="analytics-tab" class="tab-content">
+                <div class="content-wrapper">
+                    <h3>📈 Sales & Performance Insights</h3>
+                    <div id="analytics-data"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

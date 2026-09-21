@@ -1,0 +1,365 @@
+/* Global Reset and Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; 
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #2c3e50; 
+    color: white;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav button {
+    padding: 0.75rem 1.5rem;
+    margin-left: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-weight: 600;
+}
+
+nav button:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* Sections and Containers */
+.section {
+    display: none; 
+    max-width: 1300px; /* Wider section for a more professional look */
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.section.active {
+    display: block;
+}
+
+.section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 1.7rem;
+}
+
+/* === CUSTOMER VIEW STYLES (E-COMMERCE) === */
+#product-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-radius: 6px;
+}
+#product-filters select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+#customer-view-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Products wider than Cart */
+    gap: 30px;
+}
+
+/* Product Cards (The highlight for the doctor) */
+#product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.product-item {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 0; 
+    overflow: hidden; 
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s;
+    text-align: center;
+}
+.product-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    transform: translateY(-5px); 
+}
+
+/* Product Image Style */
+.product-item img {
+    width: 100%;
+    height: 220px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers area beautifully */
+    margin-bottom: 10px;
+}
+.product-details {
+    padding: 15px;
+    text-align: left;
+}
+.product-item h4 {
+    color: #3498db;
+    margin-top: 0;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-item button {
+    background-color: #2ecc71;
+    width: calc(100% - 30px);
+    margin: 10px 15px 15px 15px; 
+    padding: 10px;
+}
+
+/* Cart */
+#cart-section, #order-tracking {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+/* Cart Items */
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    background: none; 
+    box-shadow: none;
+}
+.cart-item button {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    margin: 0;
+    font-size: 0.8rem;
+    width: auto;
+}
+#place-order {
+    background-color: #3498db;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+.order-item {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+/* === ADMIN DASHBOARD STYLES (ERP) === */
+
+/* Tabs */
+.dashboard-tabs {
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    background-color: #ecf0f1;
+    border-radius: 6px 6px 0 0;
+}
+
+.tab {
+    flex-grow: 1;
+    padding: 12px 20px;
+    background-color: transparent;
+    color: #2c3e50;
+    border: none;
+    border-bottom: 3px solid transparent; /* Thick underline effect */
+    transition: background-color 0.3s, border-bottom-color 0.3s;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap; 
+}
+
+.tab.active {
+    background-color: white;
+    border-bottom-color: #3498db;
+    color: #3498db;
+}
+
+/* Content Grid - Core of the Dashboard look */
+.tab-content {
+    display: none;
+    padding: 20px 0;
+}
+
+.tab-content.active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default to 3 columns for spacious dashboard */
+    gap: 30px;
+}
+
+/* Special 1-Column Layouts */
+#products-tab.active, #orders-tab.active, #qc-tab.active {
+    grid-template-columns: 1fr; 
+}
+
+/* Forms */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+input, select, textarea {
+    display: block;
+    margin: 0.75rem 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Product form multi-column layout */
+#product-form input, #product-form select {
+    display: inline-block;
+    width: calc(33.33% - 8px); /* 3 items per row */
+    margin-right: 12px;
+    max-width: none;
+}
+#product-form input:nth-child(3n), #product-form select:nth-child(3n) {
+    margin-right: 0;
+}
+#product-form button {
+    width: 100%;
+    max-width: 100%;
+}
+
+form button[type="submit"] {
+    background-color: #1abc9c;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Low Stock Alert */
+#low-stock-alert {
+    background-color: #fcebeb; /* Light red background */
+    color: #c0392b;
+    padding: 12px;
+    border: 1px solid #e74c3c;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Inventory/Analytics blocks for better visibility */
+#inventory-tab .content-wrapper, #analytics-tab .content-wrapper, #delivery-tab .content-wrapper {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    grid-column: span 1; /* Default span */
+}
+
+/* Data Lists */
+#product-list-admin, #inventory-list, #admin-order-list, #qc-list, #delivery-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.product-item, .inventory-item, .qc-item, .delivery-item, .order-item {
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.inventory-item, .qc-item, .delivery-item {
+    background: #ecf0f1;
+    border-left: 5px solid #3498db;
+}
+
+/* Admin Order Management List */
+#admin-order-list .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fcfcfc;
+    border: 1px solid #eee;
+}
+#admin-order-list select {
+    margin: 0;
+    padding: 5px;
+    max-width: 150px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .tab-content.active {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #products-tab.active, #orders-tab.active, #qc-tab.active {
+        grid-template-columns: 1fr; 
+    }
+}
+@media (max-width: 900px) {
+    #customer-view-content {
+        grid-template-columns: 1fr;
+    }
+    #product-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .tab-content.active {
+        grid-template-columns: 1fr;
+    }
+    #product-form input, #product-form select {
+        width: calc(50% - 6px); /* 2 items per row */
+    }
+    #product-form input:nth-child(3n), #product-form select:nth-child(3n) {
+        margin-right: 12px;
+    }
+    #product-form input:nth-child(2n), #product-form select:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+@media (max-width: 600px) {
+    #product-form input, #product-form select {
+        width: 100%;
+        margin-right: 0;
+    }
+}
